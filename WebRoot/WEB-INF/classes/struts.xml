@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB18030"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<constant name="struts.i18n.encoding" value="GBK"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="true">
+	</constant>
+	<constant name="struts.serve.static.browserCache" value="false" />
+	
+	<package name="" extends="struts-default" namespace="/">
+		<action name="cbi" class="com.cbi.action.ClientAction" >
+			<result name="PestControl" type="dispatcher">pest-control.jsp</result>
+		</action>
+		<action name="pest" class="com.cbi.action.PestAction" >
+			<result name="success" type="dispatcher">pest-control.jsp</result>
+			<result name="pest" type="dispatcher">pest-description.jsp</result>
+			<result name="test" type="dispatcher">backup_index.jsp</result>
+		</action>
+		<action name="soil" class="com.cbi.action.SoilTypeAction" >
+			<result name="success" type="dispatcher">soil-type.jsp</result>
+			<result name="soiltype" type="dispatcher">soil-description.jsp</result>
+		</action>
+		<action name="plant" class="com.cbi.action.PlantAction" >
+			<result name="success" type="dispatcher">plant-guide.jsp</result>
+			<result name="plant" type="dispatcher">plant-description.jsp</result>
+			<result name="test" type="dispatcher">backup_index.jsp</result>
+		</action>
+		<action name="community_garden" class="com.cbi.action.CommunityGardenAction" >
+			<result name="success" type="dispatcher">gardens-map.jsp</result>
+			<result name="gardeninfo" type="dispatcher">garden-info.jsp</result>
+			<result name="test" type="dispatcher">backup_index.jsp</result>
+		</action>
+		<action name="donation" class="com.cbi.action.DonationAction" >
+			<result name="success" type="dispatcher">donation.jsp</result>
+			<result name="donationInfo" type="dispatcher">donation-info.jsp</result>
+			<result name="list" type="dispatcher">donation-list.jsp</result>
+			<result name="vlist" type="dispatcher">donation!getDonatioList.action</result>
+			<result name="donsta" type="dispatcher">donation-status.jsp</result>
+			<result name="test" type="dispatcher">backup_index.jsp</result>
+		</action>
+		<action name="user" class="com.cbi.action.UserAction" >
+			<result name="success" type="dispatcher">index.jsp</result>
+			<result name="login" type="dispatcher">login.jsp</result>
+			<result name="error" type="dispatcher">backup_index.jsp</result>
+		</action>
+		<action name="order" class="com.cbi.action.OrderAction" >
+			<result name="success" type="dispatcher">accept.jsp</result>
+			<result name="error" type="dispatcher">backup_index.jsp</result>
+		</action>
+	</package>
+	
+</struts>
